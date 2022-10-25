@@ -31,6 +31,7 @@ import argparse
 import time
 
 from PIL import Image
+from PIL import ImageDraw
 
 import classify
 import tflite_runtime.interpreter as tflite
@@ -99,9 +100,12 @@ def main():
   interpreter = make_interpreter(args.model)
   interpreter.allocate_tensors()
 
+
   size = classify.input_size(interpreter)
   image = Image.open(args.input).convert('RGB').resize(size, Image.ANTIALIAS)
   classify.set_input(interpreter, image)
+
+
 
   print('----INFERENCE TIME----')
   print('Note: The first inference on Edge TPU is slow because it includes',
@@ -116,6 +120,8 @@ def main():
   print('-------RESULTS--------')
   for klass in classes:
     print('%s: %.5f' % (labels.get(klass.id, klass.id), klass.score))
+
+  image.show()
 
 
 if __name__ == '__main__':
