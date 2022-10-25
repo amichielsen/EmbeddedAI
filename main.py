@@ -1,5 +1,5 @@
 # Install tflite_runtime package to evaluate the model.
-!pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-linux_x86_64.whl
+pip3 install https://dl.google.com/coral/python/tflite_runtime-2.1.0.post1-cp36-cp36m-linux_x86_64.whl
 
 # Now we do evaluation on the tflite model.
 import os
