@@ -102,7 +102,6 @@ def main():
     draw_objects(ImageDraw.Draw(image), objs, labels)
     image.save(args.output)
     image.show()
-    display(image)
 
 
 if __name__ == '__main__':
