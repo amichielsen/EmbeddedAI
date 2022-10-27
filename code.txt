@@ -9,3 +9,23 @@ python3 classify_image.py \
   --input flower.jpg
 
 git pull https://github.com/amichielsen/EmbeddedAI
+
+python3 detect_image.py \
+  --model ../../EmbeddedAI/output_tflite_graph_edgetpu.tflite \
+  --labels ../../EmbeddedAI/labels.txt \
+  --input dog.jpg \
+  --output dog_result.jpg
+
+python3 detect_image.py \
+  --model output_tflite_graph_edgetpu.tflite \
+  --labels labels.txt \
+  --input dog.jpg \
+  --output dog_result.jpg
+
+python3 detect_image.py \
+  --model output_tflite_graph_edgetpu.tflite \
+  --labels labels.txt \
+  --input cat.jpg \
+  --output cat_result.jpg
+
+edgetpu_detect_server --model output_tflite_graph_edgetpu.tflite --labels labels.txt
