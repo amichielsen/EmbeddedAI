@@ -1,0 +1,11 @@
+python3 classify_image.py \
+  --model mobilenet_v2_1.0_224_quant_edgetpu.tflite \
+  --labels flower_labels.txt \
+  --input flower.jpg
+
+python3 classify_image.py \
+  --model mobilenet_v2_1.0_224_quant.tflite \
+  --labels flower_labels.txt \
+  --input flower.jpg
+
+git pull https://github.com/amichielsen/EmbeddedAI
