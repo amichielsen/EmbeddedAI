@@ -61,7 +61,7 @@ def main():
   parser.add_argument('-i', '--input', required=True,
                       help='File path of image to process')
   parser.add_argument('-l', '--labels', help='File path of labels file')
-  parser.add_argument('-t', '--threshold', type=float, default=0.4,
+  parser.add_argument('-t', '--threshold', type=float, default=0.7,
                       help='Score threshold for detected objects')
   parser.add_argument('-o', '--output',
                       help='File path for the result image with annotations')
